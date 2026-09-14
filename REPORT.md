@@ -44,9 +44,11 @@ Chiếc xe cứu hộ (TRUCK 77) mang lớp cố định là `truck` do bản ch
 
 ## 4. Một dòng nhãn YOLO
 
-- Dòng `class x_center y_center width height`: `0 0.651563 0.523438 0.125000 0.089063`
-- Tên lớp và tọa độ điểm ảnh `xyxy`: `car`, `[377, 305, 457, 362]`
+- Dòng `class x_center y_center width height`: `1 0.938977 0.459031 0.088484 0.112125`
+- Tên lớp và tọa độ điểm ảnh `xyxy`: `truck`, `[572.6, 257.9, 629.3, 329.7]`
 - Vì sao dòng đúng định dạng vẫn có thể sai lớp, phạm vi hoặc hình học?
+
+Định dạng text của YOLO chỉ lưu các con số vô tri (mã lớp từ 0-3 và tọa độ chuẩn hóa). Nếu người gán nhãn chọn nhầm lớp (ví dụ gán nhầm `van` thành `bus`), hoặc vẽ một bounding box quá rộng bao trọn cả xe bên cạnh, thì file TXT vẫn hoàn toàn hợp lệ về mặt cú pháp máy tính (vì nó chỉ kiểm tra xem có đủ 5 con số hay không), nhưng lại sai lệch hoàn toàn về ý nghĩa vật lý thực tế.
 
 Định dạng text của YOLO chỉ lưu các con số vô tri (mã lớp từ 0-3 và tọa độ chuẩn hóa). Nếu người gán nhãn chọn nhầm lớp (nhìn `van` thành `bus`), hoặc vẽ một bounding box quá rộng bao trọn cả xe bên cạnh, thì file TXT vẫn hợp lệ về mặt cú pháp máy tính nhưng lại sai lệch hoàn toàn về ý nghĩa vật lý.
 
